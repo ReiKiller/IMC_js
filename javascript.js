@@ -48,9 +48,9 @@ nav.appendChild(contato);
 const div = document.createElement("div");
 div.style.width = "1000px";
 div.style.height = "500px";
-div.style.border = "5px solid white"
-div.style.boxShadow = "0px 0px 10px 10px white"
-div.style.borderRadius = "50px";
+div.style.border = "5px solid white";
+div.style.boxShadow = "0px 0px 10px 10px white";
+div.style.borderRadius = "100px";
 div.style.backgroundColor = "gray";
 div.style.display = "flex";
 div.style.justifyContent = "space-evenly";
@@ -61,7 +61,7 @@ body.appendChild(div);
 
 const input = document.createElement("input");
 input.style.border = "2px solid purple";
-input.style.boxShadow = "0px 0px 5px 5px white"
+input.style.boxShadow = "0px 0px 5px 5px white";
 input.style.borderRadius = "5px";
 input.placeholder = "digite seu nome";
 input.style.width = "300px";
@@ -71,7 +71,7 @@ div.appendChild(input);
 
 const input1 = document.createElement("input");
 input1.style.border = "2px solid purple";
-input1.style.boxShadow = "0px 0px 5px 5px white"
+input1.style.boxShadow = "0px 0px 5px 5px white";
 input1.style.borderRadius = "5px";
 input1.placeholder = "digite a primeira nota";
 input1.style.width = "300px";
@@ -81,7 +81,7 @@ div.appendChild(input1);
 
 const input2 = document.createElement("input");
 input2.style.border = "2px solid purple";
-input2.style.boxShadow = "0px 0px 5px 5px white"
+input2.style.boxShadow = "0px 0px 5px 5px white";
 input2.style.borderRadius = "5px";
 input2.placeholder = "digite a segunda nota";
 input2.style.width = "300px";
@@ -91,7 +91,7 @@ div.appendChild(input2);
 
 const input3 = document.createElement("input");
 input3.style.border = "2px solid purple";
-input3.style.boxShadow = "0px 0px 5px 5px white"
+input3.style.boxShadow = "0px 0px 5px 5px white";
 input3.style.borderRadius = "5px";
 input3.placeholder = "digite a terceira nota";
 input3.style.width = "300px";
@@ -133,7 +133,7 @@ div.appendChild(bt);
 
 
 const resultadoDaMedia = document.createElement("div");
-resultadoDaMedia.style.width = "500px";
+resultadoDaMedia.style.width = "550px";
 resultadoDaMedia.style.height = "50px";
 resultadoDaMedia.style.fontSize = "20px";
 resultadoDaMedia.style.backgroundColor = "lightgray";
