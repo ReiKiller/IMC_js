@@ -134,8 +134,8 @@ div.appendChild(bt);
 
 const resultadoDaMedia = document.createElement("div");
 resultadoDaMedia.style.width = "500px";
-resultadoDaMedia.style.height = "30px";
-resultadoDaMedia.style.fontSize = "20px"
+resultadoDaMedia.style.height = "50px";
+resultadoDaMedia.style.fontSize = "20px";
 resultadoDaMedia.style.backgroundColor = "lightgray";
 resultadoDaMedia.textContent = "Resultado aqui!";
 resultadoDaMedia.style.border = "1px solid black";
