@@ -65,7 +65,7 @@ contato.style.border = "1px solid black";
 contato.style.borderRadius = "10px";
 contato.style.height = "30px";
 contato.style.cursor = "pointer";
-contato.textContent = "Contato";
+contato.textContent = "Github";
 contato.addEventListener("click", function(){
     window.open("https://github.com/ReiKiller", "_blank");
 })
