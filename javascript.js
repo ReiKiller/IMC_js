@@ -67,7 +67,7 @@ contato.style.height = "30px";
 contato.style.cursor = "pointer";
 contato.textContent = "Contato";
 contato.addEventListener("click", function(){
-    alert ("Email para contato : AlehandroHenrique06@gmail.com");
+    window.open("https://github.com/ReiKiller", "_blank");
 })
 nav.appendChild(contato);
 
