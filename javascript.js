@@ -137,22 +137,43 @@ bt.addEventListener("click", function() {
     const n1 = parseFloat(input1.value);
     const n2 = parseFloat(input2.value);
     const n3 = parseFloat(input3.value);
+    const media = ((n1 + n2 + n3) / 3);
 
-    if (!isNaN(n1) && !isNaN(n2) && !isNaN(n3)) {
-        const media = (n1 + n2 + n3) / 3;
+    if (!isNaN(n1) && !isNaN(n2) && !isNaN(n3) && media >= 6) {
         bt.textContent = "Calculando...";
         bt.style.backgroundColor = "lightgreen";
         bt.style.border = "1px solid lightgreen";
         bt.style.boxShadow = "0px 0px 5px 5px lightgreen";
-        resultadoDaMedia.textContent = (`${nome}, a sua média é: ${media.toFixed(1)}`);
+        resultadoDaMedia.textContent = (`${nome}, a sua média é: ${media.toFixed(1)} e você está aprovado.`);
         resultadoDaMedia.style.fontSize = "20px";
-        resultadoDaMedia.style.backgroundColor = "lightgreen";
-    } else {
+        resultadoDaMedia.style.color = "green";
+        resultadoDaMedia.style.backgroundColor = "darkgray";
+    } 
+    else if(!isNaN(n1) && !isNaN(n2) && !isNaN(n3) && media >= 5 && media <6) {
+        bt.textContent = "Calculando...";
+        bt.style.backgroundColor = "yellow";
+        bt.style.border = "1px solid yellow";
+        bt.style.boxShadow = "0px 0px 5px 5px yellow";
+        resultadoDaMedia.textContent = (`${nome}, a sua média é: ${media.toFixed(1)} e você está de recuperação.`);
+        resultadoDaMedia.style.fontSize = "20px";
+        resultadoDaMedia.style.color = "yellow";
+        resultadoDaMedia.style.backgroundColor = "darkgray";
+    }
+    else if(!isNaN(n1) && !isNaN(n2) && !isNaN(n3) && media <=4) {
+        bt.textContent = "Calculando...";
+        bt.style.backgroundColor = "lightgreen";
+        bt.style.border = "1px solid lightgreen";
+        bt.style.boxShadow = "0px 0px 5px 5px lightgreen";
+        resultadoDaMedia.textContent = (`${nome}, a sua média é: ${media.toFixed(1)} e você está reprovado.`);
+        resultadoDaMedia.style.fontSize = "20px";
+        resultadoDaMedia.style.color = "red";
+    }
+    else {
         bt.textContent = "Erro!";
         bt.style.backgroundColor = "red";
         bt.style.border = "1px solid red";
         bt.style.boxShadow = "0px 0px 5px 5px red";
-        resultadoDaMedia.textContent = (`Por favor, ${nome}, escreva as notas novamente. Erro inesperado.`);
+        resultadoDaMedia.textContent = (`Por favor, ${nome}, escreva as notas e seu nome novamente. Erro inesperado.`);
         resultadoDaMedia.style.fontSize = "20px";
         resultadoDaMedia.style.backgroundColor = "red";
     }
