@@ -88,7 +88,7 @@ body.appendChild(div);
 
 const input = document.createElement("input");
 input.style.border = "2px solid black";
-input.type = "Text";
+input.type = "text";
 input.style.borderRadius = "5px";
 input.placeholder = "digite seu nome";
 input.style.width = "300px";
@@ -98,7 +98,7 @@ div.appendChild(input);
 
 const input1 = document.createElement("input");
 input1.style.border = "2px solid black";
-input1.type = "Number";
+input1.type = "number";
 input1.style.borderRadius = "5px";
 input1.placeholder = "digite a primeira nota";
 input1.style.width = "300px";
@@ -108,7 +108,7 @@ div.appendChild(input1);
 
 const input2 = document.createElement("input");
 input2.style.border = "2px solid black";
-input2.type = "Number";
+input2.type = "number";
 input2.style.borderRadius = "5px";
 input2.placeholder = "digite a segunda nota";
 input2.style.width = "300px";
@@ -118,12 +118,13 @@ div.appendChild(input2);
 
 const input3 = document.createElement("input");
 input3.style.border = "2px solid black";
-input3.type = "Number";
+input3.type = "number";
 input3.style.borderRadius = "5px";
 input3.placeholder = "digite a terceira nota";
 input3.style.width = "300px";
 input3.style.height = "30px";
 div.appendChild(input3);
+
 
 
 const bt = document.createElement("button");
@@ -133,49 +134,52 @@ bt.style.height = "30px";
 bt.style.cursor = "pointer";
 bt.textContent = "Calcule a média";
 bt.addEventListener("click", function() {
-    const nome = (input.value);
+    const nome = input.value;
     const n1 = parseFloat(input1.value);
     const n2 = parseFloat(input2.value);
     const n3 = parseFloat(input3.value);
-    const media = ((n1 + n2 + n3) / 3);
+    const media = (n1 + n2 + n3) / 3;
 
-    if (!isNaN(n1) && !isNaN(n2) && !isNaN(n3) && media >= 6) {
-        bt.textContent = "Calculando...";
-        bt.style.backgroundColor = "lightgreen";
-        bt.style.border = "1px solid lightgreen";
-        bt.style.boxShadow = "0px 0px 5px 5px lightgreen";
-        resultadoDaMedia.textContent = (`${nome}, a sua média é: ${media.toFixed(1)} e você está aprovado.`);
-        resultadoDaMedia.style.fontSize = "20px";
-        resultadoDaMedia.style.color = "green";
-        resultadoDaMedia.style.backgroundColor = "darkgray";
-    } 
-    else if(!isNaN(n1) && !isNaN(n2) && !isNaN(n3) && media >= 5 && media <6) {
-        bt.textContent = "Calculando...";
-        bt.style.backgroundColor = "yellow";
-        bt.style.border = "1px solid yellow";
-        bt.style.boxShadow = "0px 0px 5px 5px yellow";
-        resultadoDaMedia.textContent = (`${nome}, a sua média é: ${media.toFixed(1)} e você está de recuperação.`);
-        resultadoDaMedia.style.fontSize = "20px";
-        resultadoDaMedia.style.color = "yellow";
-        resultadoDaMedia.style.backgroundColor = "darkgray";
-    }
-    else if(!isNaN(n1) && !isNaN(n2) && !isNaN(n3) && media <=4) {
-        bt.textContent = "Calculando...";
-        bt.style.backgroundColor = "lightgreen";
-        bt.style.border = "1px solid lightgreen";
-        bt.style.boxShadow = "0px 0px 5px 5px lightgreen";
-        resultadoDaMedia.textContent = (`${nome}, a sua média é: ${media.toFixed(1)} e você está reprovado.`);
-        resultadoDaMedia.style.fontSize = "20px";
-        resultadoDaMedia.style.color = "red";
-    }
-    else {
+    if (!isNaN(n1) && !isNaN(n2) && !isNaN(n3)) {
+        if (media >= 6) {
+            bt.textContent = "Calculando...";
+            bt.style.backgroundColor = "lightgreen";
+            bt.style.border = "1px solid lightgreen";
+            bt.style.boxShadow = "0px 0px 5px 5px lightgreen";
+            resultadoDaMedia.textContent = `${nome}, a sua média é: ${media.toFixed(1)} e você está aprovado.`;
+            resultadoDaMedia.style.fontSize = "20px";
+            resultadoDaMedia.style.color = "green";
+            resultadoDaMedia.style.backgroundColor = "darkgray";
+
+        } else if (media >= 5) {
+            bt.textContent = "Calculando...";
+            bt.style.backgroundColor = "yellow";
+            bt.style.border = "1px solid yellow";
+            bt.style.boxShadow = "0px 0px 5px 5px yellow";
+            resultadoDaMedia.textContent = `${nome}, a sua média é: ${media.toFixed(1)} e você está de recuperação.`;
+            resultadoDaMedia.style.fontSize = "20px";
+            resultadoDaMedia.style.color = "yellow";
+            resultadoDaMedia.style.backgroundColor = "darkgray";
+
+        } else {
+            bt.textContent = "Calculando...";
+            bt.style.backgroundColor = "red";
+            bt.style.border = "1px solid red";
+            bt.style.boxShadow = "0px 0px 5px 5px red";
+            resultadoDaMedia.textContent = `${nome}, a sua média é: ${media.toFixed(1)} e você está reprovado.`;
+            resultadoDaMedia.style.fontSize = "20px";
+            resultadoDaMedia.style.color = "red";
+            resultadoDaMedia.style.backgroundColor = "darkgray";
+        }
+    } else {
         bt.textContent = "Erro!";
         bt.style.backgroundColor = "red";
         bt.style.border = "1px solid red";
         bt.style.boxShadow = "0px 0px 5px 5px red";
-        resultadoDaMedia.textContent = (`Por favor, ${nome}, escreva as notas e seu nome novamente. Erro inesperado.`);
+        resultadoDaMedia.textContent = `Por favor, ${nome}, escreva as notas e seu nome novamente. Erro inesperado.`;
         resultadoDaMedia.style.fontSize = "20px";
-        resultadoDaMedia.style.backgroundColor = "red";
+        resultadoDaMedia.style.color = "red";
+        resultadoDaMedia.style.backgroundColor = "darkgray";
     }
 });
 div.appendChild(bt);
